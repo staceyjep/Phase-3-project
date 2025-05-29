@@ -25,4 +25,8 @@ class Movie(Base):
 
     # Relationships
     director = relationship("Director", back_populates="movies")
-    actors = relationship("Actor", secondary=movie_actor, back_populates="mo
+    actors = relationship("Actor", secondary=movie_actor, back_populates="movies")
+    crew_members = relationship("Crew", secondary=movie_crew, back_populates="movies")
+
+    def __repr__(self):
+        return f"<Movie title='{self.title}' genre='{self.genre}'>"

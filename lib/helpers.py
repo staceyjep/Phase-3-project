@@ -22,34 +22,34 @@ def add_entry(session):
         movie = Movie(title=title, genre=genre, director=director)
         session.add(movie)
         session.commit()
-        print(f"✅ Added movie: {title}")
+        print(f" Added movie: {title}")
 
     elif choice == "2":
         name = input("Director's name: ")
         nationality = input("Nationality: ")
         session.add(Director(name=name, nationality=nationality))
         session.commit()
-        print(f"✅ Added director: {name}")
+        print(f"Added director: {name}")
 
     elif choice == "3":
         name = input("Actor's name: ")
         age = input("Age: ")
         session.add(Actor(name=name, age=int(age)))
         session.commit()
-        print(f"✅ Added actor: {name}")
+        print(f"Added actor: {name}")
 
     elif choice == "4":
         name = input("Crew member's name: ")
         role = input("Their role (e.g., editor, composer): ")
         session.add(Crew(name=name, role=role))
         session.commit()
-        print(f"✅ Added crew member: {name}")
+        print(f"Added crew member: {name}")
 
     else:
-        print("⚠️ Invalid choice.")
+        print(" Invalid choice.")
 
 def list_all_entries(session):
-    print("\n🎞️ All Movies:")
+    print("\n All Movies:")
     for movie in session.query(Movie).all():
         print(f" - {movie.title} ({movie.genre})")
 
@@ -89,11 +89,11 @@ def delete_entry(session):
         if item:
             session.delete(item)
             session.commit()
-            print("🗑️ Deleted successfully.")
+            print(" Deleted successfully.")
         else:
-            print("❌ Not found.")
+            print(" Not found.")
     else:
-        print("⚠️ Invalid category.")
+        print(" Invalid category.")
 
 def clear_database(session):
     session.query(Movie).delete()
@@ -101,4 +101,4 @@ def clear_database(session):
     session.query(Actor).delete()
     session.query(Crew).delete()
     session.commit()
-    print("🧹 Database cleared.")
+    print(" Database cleared.")
