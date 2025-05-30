@@ -9,7 +9,7 @@ class Director(Base):
     name = Column(String)
     nationality = Column(String)
 
-    # One-to-many: A director can direct many movies
+    
     movies = relationship("Movie", back_populates="director")
 
     def __repr__(self):

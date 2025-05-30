@@ -10,7 +10,6 @@ class Crew(Base):
     name = Column(String)
     role = Column(String)
 
-    # Many-to-many with Movie
     movies = relationship("Movie", secondary=movie_crew, back_populates="crew_members")
 
     def __repr__(self):

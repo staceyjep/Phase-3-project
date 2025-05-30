@@ -10,7 +10,7 @@ class Actor(Base):
     name = Column(String)
     age = Column(Integer)
 
-    # Many-to-many with Movie
+   
     movies = relationship("Movie", secondary=movie_actor, back_populates="actors")
 
     def __repr__(self):
