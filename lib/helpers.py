@@ -85,7 +85,7 @@ def delete_entry(session):
     model = model_map.get(choice)
 
     if model:
-        item = session.query(model).filter_by(name=name).first()
+        item = session.query(model).filter_by(title=name).first()  
         if item:
             session.delete(item)
             session.commit()

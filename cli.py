@@ -15,7 +15,7 @@ session = Session()
 
 def show_menu():
     while True:
-        print("\n🎬 Welcome to the Film Database CLI 🎬")
+        print("\n Welcome to the Film Database CLI ")
         print("1. Add New Entry")
         print("2. View All Entries")
         print("3. Delete an Entry")
