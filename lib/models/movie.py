@@ -23,7 +23,7 @@ class Movie(Base):
     genre = Column(String)
     director_id = Column(Integer, ForeignKey('directors.id'))
 
-    # Relationships
+   
     director = relationship("Director", back_populates="movies")
     actors = relationship("Actor", secondary=movie_actor, back_populates="movies")
     crew_members = relationship("Crew", secondary=movie_crew, back_populates="movies")

@@ -14,7 +14,7 @@ def add_entry(session):
         genre = input("Genre: ")
         director_name = input("Director name: ")
 
-        # Reuse existing director or create a new one
+        
         director = session.query(Director).filter_by(name=director_name).first()
         if not director:
             director = Director(name=director_name)
