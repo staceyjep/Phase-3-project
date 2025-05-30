@@ -22,7 +22,7 @@ def add_entry(session):
         movie = Movie(title=title, genre=genre, director=director)
         session.add(movie)
         session.commit()
-        print(f" Added movie: {title}")
+        print(f"Added movie: {title}")
 
     elif choice == "2":
         name = input("Director's name: ")
@@ -36,32 +36,32 @@ def add_entry(session):
         age = input("Age: ")
         session.add(Actor(name=name, age=int(age)))
         session.commit()
-        print(f"Added actor: {name}")
+        print(f"✅ Added actor: {name}")
 
     elif choice == "4":
         name = input("Crew member's name: ")
         role = input("Their role (e.g., editor, composer): ")
         session.add(Crew(name=name, role=role))
         session.commit()
-        print(f"Added crew member: {name}")
+        print(f" Added crew member: {name}")
 
     else:
-        print(" Invalid choice.")
+        print("Invalid choice.")
 
 def list_all_entries(session):
     print("\n All Movies:")
     for movie in session.query(Movie).all():
         print(f" - {movie.title} ({movie.genre})")
 
-    print("\n🎬 Directors:")
+    print("\nDirectors:")
     for director in session.query(Director).all():
         print(f" - {director.name} [{director.nationality}]")
 
-    print("\n🎭 Actors:")
+    print("\nActors:")
     for actor in session.query(Actor).all():
         print(f" - {actor.name}, Age: {actor.age}")
 
-    print("\n🎧 Crew Members:")
+    print("\nCrew Members:")
     for crew in session.query(Crew).all():
         print(f" - {crew.name} — {crew.role}")
 

@@ -8,7 +8,7 @@ from lib.models import Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-# Setup database
+
 engine = create_engine('sqlite:///films.db')
 Session = sessionmaker(bind=engine)
 session = Session()
